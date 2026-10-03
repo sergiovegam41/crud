@@ -1,0 +1,22 @@
+@base = http://localhost:5118
+
+### Listar todos
+GET {{base}}/estudiantes
+
+### Obtener uno
+GET {{base}}/estudiantes/1
+
+### Crear
+POST {{base}}/estudiantes
+Content-Type: application/json
+
+{ "nombre": "María", "apellido": "López", "edad": 19, "carrera": "Derecho" }
+
+### Actualizar
+PUT {{base}}/estudiantes/1
+Content-Type: application/json
+
+{ "nombre": "Ana", "apellido": "García", "edad": 21, "carrera": "Ingeniería de Software" }
+
+### Eliminar
+DELETE {{base}}/estudiantes/2

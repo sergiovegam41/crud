@@ -1,0 +1,63 @@
+{
+  "info": {
+    "name": "CRUD Estudiantes",
+    "description": "Colección para probar la API CRUD de estudiantes en .NET",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base", "value": "http://localhost:5118" }
+  ],
+  "item": [
+    {
+      "name": "Listar todos",
+      "request": {
+        "method": "GET",
+        "url": "{{base}}/estudiantes"
+      }
+    },
+    {
+      "name": "Obtener uno",
+      "request": {
+        "method": "GET",
+        "url": "{{base}}/estudiantes/1"
+      }
+    },
+    {
+      "name": "Crear",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"María\",\n  \"apellido\": \"López\",\n  \"edad\": 19,\n  \"carrera\": \"Derecho\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{base}}/estudiantes"
+      }
+    },
+    {
+      "name": "Actualizar",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Ana\",\n  \"apellido\": \"García\",\n  \"edad\": 21,\n  \"carrera\": \"Ingeniería de Software\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{base}}/estudiantes/1"
+      }
+    },
+    {
+      "name": "Eliminar",
+      "request": {
+        "method": "DELETE",
+        "url": "{{base}}/estudiantes/2"
+      }
+    }
+  ]
+}
